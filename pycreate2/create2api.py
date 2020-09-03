@@ -154,7 +154,31 @@ class Create2(object):
         """
         self.SCI.write(OPCODES.POWER)
         time.sleep(self.sleep_timer)
+    # ----------------- Cleaning Commands ----------------
+    """
+    local implimatations by winggate on Aug.2020
+    """
+    def clean(self):
+        """
+        This command stars the default cleaing mode same as preccing Roomba's Clean button
+        """
+        self.SCI.write(OPCODES.CLEAN)
+        time.sleep(self.sleep_timer)
 
+    def max(self):
+        """
+        This command stars the Max cleaing mode.
+        """
+        self.SCI.write(OPCODES.MAX)
+        time.sleep(self.sleep_timer)
+
+    def spot(self):
+        """
+        This command stars the Spot cleaing mode same as preccing Roomba's Spot button
+        """
+        self.SCI.write(OPCODES.SPOT)
+        time.sleep(self.sleep_timer)
+    
     # ------------------ Drive Commands ------------------
 
     def drive_stop(self):
