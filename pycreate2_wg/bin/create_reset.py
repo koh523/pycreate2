@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import pycreate2-wg
+import pycreate2_wg
 import argparse
 
 DESCRIPTION = """
@@ -23,7 +23,7 @@ def main():
     port = args['port']
     baud = args['baud']
 
-    bot = pycreate2-wg.Create2(port=port, baud=baud)
+    bot = pycreate2_wg.Create2(port=port, baud=baud)
 
     bot.start()
     ret = bot.reset()
