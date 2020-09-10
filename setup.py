@@ -13,10 +13,6 @@ install_requires = \
 extras_require = \
 {':python_version < "3.8"': ['importlib-metadata']}
 
-entry_points = \
-{'console_scripts': ['create_monitor = pycreate2_wg.bin.create_monitor:main',
-                     'create_reset = pycreate2_wg.bin.create_reset:main',
-                     'create_shutdown = pycreate2_wg.bin.create_shutdown:main']}
 
 setup_kwargs = {
     'name': 'pycreate2_wg',
