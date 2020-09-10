@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 
-import pycreate2
+import pycreate2wg
 import argparse
-import time
-
 
 DESCRIPTION = """
-Shuts down the Create 2.
+Resets the Create 2.
 """
 
 
@@ -21,25 +19,16 @@ def handleArgs():
     return args
 
 def main():
-
     args = handleArgs()
     port = args['port']
     baud = args['baud']
 
-    bot = pycreate2_wg.Create2(port=port, baud=baud)
+    bot = pycreate2wg.Create2(port=port, baud=baud)
 
     bot.start()
-    time.sleep(0.25)
-    bot.power()  # this seems to shut it down more than stop ... confused
-    # bot.shutdown()
-    time.sleep(0.25)
-    bot.stop()
-    time.sleep(1)
+    ret = bot.reset()
+    print(ret)
 
-    print('=====================================================')
-    print('\n\tCreate Shutdown')
-    print('\tHit power button to wake-up\n')
-    print('=====================================================')
 
 if __name__ == "__main__":
     main()
